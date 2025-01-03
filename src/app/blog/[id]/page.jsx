@@ -1,7 +1,7 @@
 import React from "react";
 
-const Blog = () => {
+const BlogPost = () => {
   return <div></div>;
 };
 
-export default Blog;
+export default BlogPost;
