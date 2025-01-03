@@ -35,16 +35,27 @@ const Navbar = () => {
     },
   ];
   return (
-    <div>
+    <div className="flex justify-between items-center h-20">
       <div>
-        <Link href="/">Meta-Tech</Link>
+        <Link href="/" className="font-bold text-base">
+          Meta-Tech
+        </Link>
       </div>
-      <div>
+      <div className="flex gap-4 items-center">
         {links.map((link) => (
-          <Link key={link.id} href={link.url}>
+          <Link
+            key={link.id}
+            href={link.url}
+            className="flex items-center gap-4"
+          >
             {link.title}
           </Link>
         ))}
+      </div>
+      <div>
+        <button className="p-1 border-none bg-[#53c28b] text-white cursor-pointer rounded-md">
+          Logout
+        </button>
       </div>
     </div>
   );
