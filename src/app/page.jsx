@@ -3,18 +3,26 @@ import Hero from "../../public/images/hero.png";
 
 export default function Home() {
   return (
-    <div className="flex items-center gap-28">
-      <div>
-        <h1>Better Design for your digital production.</h1>
-        <p>
+    <div className="flex flex-1 justify-between items-center gap-28">
+      <section className="flex flex-1 flex-col gap-10">
+        <h1 className="text-7xl bg-gradient-to-b from-[#194c33] to-gray-400 bg-clip-text text-transparent">
+          Better Design for your digital production.
+        </h1>
+        <p className="text-2xl font-light">
           Turning your idea into Reality. We bring together the teams from the
           golabally industry.
         </p>
-        <button>See Our Works</button>
-      </div>
-      <div className="w-full h-[500px] object-cover">
-        <Image src={Hero} fill></Image>
-      </div>
+        <button className="p-5 cursor-pointer bg-[#53c28b] border-none rounded w-max text-white">
+          See Our Works
+        </button>
+      </section>
+      <section className="flex-1 flex-col gap-12">
+        <Image
+          src={Hero}
+          alt="hero image"
+          className="w-full h-[500px] object-cover"
+        ></Image>
+      </section>
     </div>
   );
 }

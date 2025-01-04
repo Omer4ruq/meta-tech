@@ -53,7 +53,7 @@ const Navbar = () => {
         ))}
       </div>
       <div>
-        <button className="p-1 border-none bg-[#53c28b] text-white cursor-pointer rounded-md">
+        <button className="p-1 border-none bg-[#53c28b] text-white cursor-pointer rounded">
           Logout
         </button>
       </div>
