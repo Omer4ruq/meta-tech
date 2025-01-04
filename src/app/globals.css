@@ -27,9 +27,9 @@ a {
 
 .container {
   max-width: 1366px;
-  min-height: 100vh;
-  margin: 0 60px;
-  padding: 0 60px;
+  min-height: 0;
+  margin: 0;
+  padding: 0 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
