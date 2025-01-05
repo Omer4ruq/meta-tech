@@ -12,7 +12,7 @@ const Portfolio = () => {
       <div className="flex gap-12 ">
         <Link
           href="/portfolio/illustrations"
-          className="border-4 border-[#bbb] rounded-md w-72 h-72 relative"
+          className="border-4 border-[#bbb] rounded-md w-72 h-72 relative hover:text-[#53c28b]"
         >
           <Image src={illustratatin} alt="illustrations" fill></Image>
           <span className="absolute right-3 bottom-3  text-3xl font-bold">
@@ -21,7 +21,7 @@ const Portfolio = () => {
         </Link>
         <Link
           href="/portfolio/websites"
-          className="border-4 border-[#bbb] rounded-md w-72 h-72 relative"
+          className="border-4 border-[#bbb] rounded-md w-72 h-72 relative hover:text-[#53c28b]"
         >
           <Image src={websites} alt="illustrations" fill></Image>
           <span className="absolute right-3 bottom-3 text-3xl font-bold">
@@ -30,7 +30,7 @@ const Portfolio = () => {
         </Link>
         <Link
           href="/portfolio/applications"
-          className="border-4 border-[#bbb] rounded-md w-72 h-72 relative"
+          className="border-4 border-[#bbb] rounded-md w-72 h-72 relative hover:text-[#53c28b]"
         >
           <Image src={apps} alt="illustrations" fill></Image>
           <span className="absolute right-3 bottom-3  text-3xl font-bold">
