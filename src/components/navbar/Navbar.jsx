@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import { CiMenuFries } from "react-icons/ci";
+import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const links = [
     {
       id: 1,
@@ -34,6 +38,10 @@ const Navbar = () => {
       url: "/dashboard",
     },
   ];
+
+  function handleSidebar() {
+    setIsOpen(!isOpen);
+  }
   return (
     <div className="flex justify-between items-center h-20">
       <div>
@@ -41,7 +49,7 @@ const Navbar = () => {
           Meta-Tech
         </Link>
       </div>
-      <div className="flex gap-4 items-center">
+      <div className="hidden md:flex gap-4 items-center">
         {links.map((link) => (
           <Link
             key={link.id}
@@ -52,10 +60,36 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div>
+      <div className="hidden md:block">
         <button className="p-1 border-none bg-[#53c28b] text-white cursor-pointer rounded">
           Logout
         </button>
+      </div>
+      <div className="block md:hidden">
+        <button onClick={handleSidebar}>
+          {isOpen ? (
+            <IoClose className="text-2xl font-bold" />
+          ) : (
+            <CiMenuFries className="text-2xl font-bold" />
+          )}
+        </button>
+        <div
+          className={`absolute top-20 left-0 w-full bg-white shadow-md flex flex-col 
+            items-center gap-4 py-4 transition-transform duration-300 ${
+              isOpen ? "" : "-translate-y-full"
+            } md:hidden`}
+        >
+          {links.map((link) => (
+            <Link
+              key={link.id}
+              href={link.url}
+              className="text-gray-700 hover:text-[#53c28b] transition-colors duration-200"
+              onClick={() => setIsOpen(false)} // Close menu on link click
+            >
+              {link.title}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

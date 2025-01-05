@@ -7,6 +7,19 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        move: "move 3s infinite ease alternate",
+      },
+      keyframes: {
+        move: {
+          from: {
+            transform: "translateY(-15px)",
+          },
+          to: {
+            transform: "translateY(0px) scale(1.03)",
+          },
+        },
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

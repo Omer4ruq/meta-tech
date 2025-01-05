@@ -19,7 +19,7 @@ export default function Home() {
         <Image
           src={Hero}
           alt="hero image"
-          className="w-full h-[500px] object-cover"
+          className="w-full h-[500px] object-cover animate-move"
         ></Image>
       </section>
     </div>
