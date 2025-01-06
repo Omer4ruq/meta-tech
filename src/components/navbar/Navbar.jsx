@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
+import DarkModeToggle from "../darkModeToggle/DarkModeToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,6 +51,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="hidden md:flex gap-4 items-center">
+        <DarkModeToggle></DarkModeToggle>
         {links.map((link) => (
           <Link
             key={link.id}
