@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { IoIosMoon } from "react-icons/io";
 import { IoIosSunny } from "react-icons/io";
 import { FaCircle } from "react-icons/fa";
-import { ThemeContext } from "../../../context/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const DarkModeToggle = () => {
   const { toggle, mode } = useContext(ThemeContext);
