@@ -2,6 +2,10 @@ import Image from "next/image";
 import React from "react";
 import contactImage from "../../../public/images/contact.png";
 import Button from "@/components/button/Button";
+export const metadata = {
+  title: "Contact",
+  description: "Metatech Contact",
+};
 
 const Contact = () => {
   return (
