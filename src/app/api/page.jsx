@@ -4,18 +4,16 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Registration = () => {
-  const [err, setErr] = useState(null);
-
+  const [err, setErr] = useState(false);
   const router = useRouter();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-
+    console.log(name);
     try {
-      const res = await fetch(`/api/register`, {
+      const res = await fetch("api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,8 +27,8 @@ const Registration = () => {
       res.status === 201 &&
         router.push("/login?success=Account has been created");
     } catch (err) {
-      setErr(err);
       console.log(err);
+      setErr(true);
     }
   };
   return (
