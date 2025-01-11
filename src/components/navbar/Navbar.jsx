@@ -4,8 +4,14 @@ import React, { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 import DarkModeToggle from "../darkModeToggle/DarkModeToggle";
+import Logout from "../logout/Logout";
+import { auth } from "@/auth/auth";
+import { useSession } from "next-auth/react";
+
+import LoginRegisterButton from "../login-register-btn/LoginRegisterButton";
 
 const Navbar = () => {
+  const session = useSession();
   const [isOpen, setIsOpen] = useState(false);
   const links = [
     {
@@ -63,9 +69,14 @@ const Navbar = () => {
         ))}
       </div>
       <div className="hidden md:block">
-        <button className="p-1 border-none bg-[#53c28b] text-white cursor-pointer rounded">
-          Logout
-        </button>
+        {session.user ? (
+          <Logout></Logout>
+        ) : (
+          <div className="flex gap-4">
+            <LoginRegisterButton title="Login" url="login" />
+            <LoginRegisterButton title="Register" url="registration" />
+          </div>
+        )}
       </div>
       <div className="block md:hidden">
         <button onClick={handleSidebar}>
